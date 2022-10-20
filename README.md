@@ -345,4 +345,523 @@ Next in the table we have multiple rows representing the instances of the respec
               </tr>
 ```
 
+- paging
+
+Last element in the list UI element is a paging component.
+
+```
+        <nav aria-label="...">
+            <ul class="pagination justify-content-center">
+
+              <li class="page-item disabled">
+                <a class="page-link">First</a>
+              </li>
+
+              <li class="page-item">
+                <a class="page-link" href="#">1</a>
+              </li>
+
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">2</a>
+              </li>
+
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+
+              <li class="page-item">
+                <a class="page-link" href="#">Last</a>
+              </li>
+
+            </ul>
+          </nav>
+```
+
+The anatomy of the paging component is as follows:
+
+First, we have a wrapping _nav_ element:
+
+```
+        <nav aria-label="...">
+        </nav>
+```
+
+Next, we have a _ul_ element:
+
+```
+            <ul class="pagination justify-content-center">
+            </ul>
+```
+
+Next, we have the elements in the paging component represented by different _li_ elements. Additional classes like _disabled_ and _active_ could be used to disable a link and to state the page which is currently active, a.k.a. being displayed:
+
+```
+              <li class="page-item disabled">
+                <a class="page-link">First</a>
+              </li>
+
+              <li class="page-item">
+                <a class="page-link" href="#">1</a>
+              </li>
+
+              <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">2</a>
+              </li>
+
+              <li class="page-item">
+                <a class="page-link" href="#">3</a>
+              </li>
+
+              <li class="page-item">
+                <a class="page-link" href="#">Last</a>
+              </li>
+
+```
+
 ### Card
+
+This UI element will be used to display the details of a single instance of a particular object. 
+
+It will have 2 main usescases:
+
+- view/edit/update an existing object;
+- create a new object;
+
+Example: itemCard.html
+
+Anatomy of the UI element contains the following components:
+
+- navigation
+
+As with the other UI elements, on the top of a card page we will have the standard navigation;
+
+- breadcrumb
+
+The breadcrumb should contain information regarding how and what path the user took in order to land in the current page.
+
+- form
+
+Here is a sample code and then its elements explained one by one:
+
+```
+      <div class="container-fluid">
+        <h2>Item Card</h2>
+
+        <div class="col-md-12 col-lg-12">
+            <form class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label for="firstName" class="form-label">Code</label>
+                  <input type="text" class="form-control" id="code" placeholder="" value="" required>
+                </div>
+    
+                <div class="col-sm-6">
+                  <label for="lastName" class="form-label">Description</label>
+                  <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                </div>
+
+                <div class="col-sm-6">
+                    <label for="firstName" class="form-label">Sales Price</label>
+                    <input type="text" class="form-control" id="code" placeholder="" value="" required>
+                  </div>
+      
+                <div class="col-sm-6">
+                   <label for="lastName" class="form-label">Purchase Price</label>
+                   <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                </div>
+
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Item Ledger Entries</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Sales Prices</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Purchase Prices</a>
+                    </li>
+                </ul>                
+
+                <div class="table-responsive">
+                    <table class="table table-striped table-sm">
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Qty</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1,001</td>
+                          <td>random</td>
+                          <td>data</td>
+                          <td>placeholder</td>
+                          <td>text</td>
+                        </tr>
+                        <tr>
+                          <td>1,002</td>
+                          <td>placeholder</td>
+                          <td>irrelevant</td>
+                          <td>visual</td>
+                          <td>layout</td>
+                        </tr>
+                        <tr>
+                          <td>1,003</td>
+                          <td>data</td>
+                          <td>rich</td>
+                          <td>dashboard</td>
+                          <td>tabular</td>
+                        </tr>
+                        <tr>
+                          <td>1,003</td>
+                          <td>information</td>
+                          <td>placeholder</td>
+                          <td>illustrative</td>
+                          <td>data</td>
+                        </tr>
+                        <tr>
+                          <td>1,004</td>
+                          <td>text</td>
+                          <td>random</td>
+                          <td>layout</td>
+                          <td>dashboard</td>
+                        </tr>
+                        <tr>
+                          <td>1,005</td>
+                          <td>dashboard</td>
+                          <td>irrelevant</td>
+                          <td>text</td>
+                          <td>placeholder</td>
+                        </tr>
+                        <tr>
+                          <td>1,006</td>
+                          <td>dashboard</td>
+                          <td>illustrative</td>
+                          <td>rich</td>
+                          <td>data</td>
+                        </tr>
+                        <tr>
+                          <td>1,007</td>
+                          <td>placeholder</td>
+                          <td>tabular</td>
+                          <td>information</td>
+                          <td>irrelevant</td>
+                        </tr>
+                        <tr>
+                          <td>1,008</td>
+                          <td>random</td>
+                          <td>data</td>
+                          <td>placeholder</td>
+                          <td>text</td>
+                        </tr>
+                        <tr>
+                          <td>1,009</td>
+                          <td>placeholder</td>
+                          <td>irrelevant</td>
+                          <td>visual</td>
+                          <td>layout</td>
+                        </tr>
+                        <tr>
+                          <td>1,010</td>
+                          <td>data</td>
+                          <td>rich</td>
+                          <td>dashboard</td>
+                          <td>tabular</td>
+                        </tr>
+                        <tr>
+                          <td>1,011</td>
+                          <td>information</td>
+                          <td>placeholder</td>
+                          <td>illustrative</td>
+                          <td>data</td>
+                        </tr>
+                        <tr>
+                          <td>1,012</td>
+                          <td>text</td>
+                          <td>placeholder</td>
+                          <td>layout</td>
+                          <td>dashboard</td>
+                        </tr>
+                        <tr>
+                          <td>1,013</td>
+                          <td>dashboard</td>
+                          <td>irrelevant</td>
+                          <td>text</td>
+                          <td>visual</td>
+                        </tr>
+                        <tr>
+                          <td>1,014</td>
+                          <td>dashboard</td>
+                          <td>illustrative</td>
+                          <td>rich</td>
+                          <td>data</td>
+                        </tr>
+                        <tr>
+                          <td>1,015</td>
+                          <td>random</td>
+                          <td>tabular</td>
+                          <td>information</td>
+                          <td>text</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+          
+              </div>
+            </form>
+          </div>
+```
+
+First, we have a wrapper _div_ element:
+
+```
+      <div class="container-fluid">
+      </div>
+```
+
+Next we have a _h2_ element static what this card is for:
+
+```
+        <h2>Item Card</h2>
+```
+
+Next, we have a _div_ element which acts as a wrapper:
+
+```
+        <div class="col-md-12 col-lg-12">
+        </div>
+```
+
+Next, we have a _form_ element:
+
+```
+            <form class="needs-validation" novalidate>
+            </form>
+```
+
+Next, we have yet another wrapper _div_ element:
+
+```
+              <div class="row g-3">
+              </div>
+```
+
+Next, we have yet another wrapper _div_ element. Now, this div element will contain the actual elements of the wrapping _form_ element:
+
+```
+                <div class="col-sm-6">
+                </div>
+```
+
+Next, the actual we have the actual form element with a respective label. Now, due the class of the wrapping _div_ element, this element practically takes half of the screen. The next element takes the other half and so on they go on the next line:
+
+```
+                  <label for="firstName" class="form-label">Code</label>
+                  <input type="text" class="form-control" id="code" placeholder="" value="" required>
+```
+
+After the form elements are listed in their wrapping _div_ elements, we have a button to submit the form:
+
+```
+                <div class="col-sm-6">
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+```
+
+Now, this completes the basic components of the card. Almost all basic objects have some supplementary objects related to them. In the object types section they are refered to as _secondary_ objects. Now, these type of objects could be displayed here in the card of the main object. The idea is that this is done via a tabbed navigation. Here are more details:
+
+First, we define a _ul_ element which will hold the different tables which will show the different types of secondary objects:
+
+```
+                <ul class="nav nav-tabs">
+                </ul>
+```
+
+Next, the different elements of the navigation are listed as different _li_ elements:
+
+```
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Item Ledger Entries</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Sales Prices</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Purchase Prices</a>
+                    </li>
+```
+
+Next, we have a table, which shows the list of secondary objects:
+
+```
+                    <table class="table table-striped table-sm">
+                      <thead>
+                        <tr>
+                          <th scope="col">No</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Qty</th>
+                          <th scope="col">Price</th>
+                          <th scope="col">Amount</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1,001</td>
+                          <td>random</td>
+                          <td>data</td>
+                          <td>placeholder</td>
+                          <td>text</td>
+                        </tr>
+                        <tr>
+                          <td>1,002</td>
+                          <td>placeholder</td>
+                          <td>irrelevant</td>
+                          <td>visual</td>
+                          <td>layout</td>
+                        </tr>
+                        <tr>
+                          <td>1,003</td>
+                          <td>data</td>
+                          <td>rich</td>
+                          <td>dashboard</td>
+                          <td>tabular</td>
+                        </tr>
+                        <tr>
+                          <td>1,003</td>
+                          <td>information</td>
+                          <td>placeholder</td>
+                          <td>illustrative</td>
+                          <td>data</td>
+                        </tr>
+                        <tr>
+                          <td>1,004</td>
+                          <td>text</td>
+                          <td>random</td>
+                          <td>layout</td>
+                          <td>dashboard</td>
+                        </tr>
+                        <tr>
+                          <td>1,005</td>
+                          <td>dashboard</td>
+                          <td>irrelevant</td>
+                          <td>text</td>
+                          <td>placeholder</td>
+                        </tr>
+                        <tr>
+                          <td>1,006</td>
+                          <td>dashboard</td>
+                          <td>illustrative</td>
+                          <td>rich</td>
+                          <td>data</td>
+                        </tr>
+                        <tr>
+                          <td>1,007</td>
+                          <td>placeholder</td>
+                          <td>tabular</td>
+                          <td>information</td>
+                          <td>irrelevant</td>
+                        </tr>
+                        <tr>
+                          <td>1,008</td>
+                          <td>random</td>
+                          <td>data</td>
+                          <td>placeholder</td>
+                          <td>text</td>
+                        </tr>
+                        <tr>
+                          <td>1,009</td>
+                          <td>placeholder</td>
+                          <td>irrelevant</td>
+                          <td>visual</td>
+                          <td>layout</td>
+                        </tr>
+                        <tr>
+                          <td>1,010</td>
+                          <td>data</td>
+                          <td>rich</td>
+                          <td>dashboard</td>
+                          <td>tabular</td>
+                        </tr>
+                        <tr>
+                          <td>1,011</td>
+                          <td>information</td>
+                          <td>placeholder</td>
+                          <td>illustrative</td>
+                          <td>data</td>
+                        </tr>
+                        <tr>
+                          <td>1,012</td>
+                          <td>text</td>
+                          <td>placeholder</td>
+                          <td>layout</td>
+                          <td>dashboard</td>
+                        </tr>
+                        <tr>
+                          <td>1,013</td>
+                          <td>dashboard</td>
+                          <td>irrelevant</td>
+                          <td>text</td>
+                          <td>visual</td>
+                        </tr>
+                        <tr>
+                          <td>1,014</td>
+                          <td>dashboard</td>
+                          <td>illustrative</td>
+                          <td>rich</td>
+                          <td>data</td>
+                        </tr>
+                        <tr>
+                          <td>1,015</td>
+                          <td>random</td>
+                          <td>tabular</td>
+                          <td>information</td>
+                          <td>text</td>
+                        </tr>
+                      </tbody>
+                    </table>
+```
+
+Next, we have a navigation component to navigate over the secondary objects related to the main object:
+
+```
+      <nav aria-label="...">
+        <ul class="pagination justify-content-center">
+
+          <li class="page-item disabled">
+            <a class="page-link">First</a>
+          </li>
+
+          <li class="page-item">
+            <a class="page-link">Prev</a>
+          </li>
+
+          <li class="page-item">
+            <a class="page-link" href="#">1</a>
+          </li>
+
+          <li class="page-item active" aria-current="page">
+            <a class="page-link" href="#">2</a>
+          </li>
+
+          <li class="page-item">
+            <a class="page-link" href="#">3</a>
+          </li>
+
+          <li class="page-item">
+            <a class="page-link">Next</a>
+          </li>
+
+          <li class="page-item">
+            <a class="page-link" href="#">Last</a>
+          </li>
+
+        </ul>
+      </nav>
+```
